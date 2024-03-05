@@ -56,4 +56,4 @@ heima002	李四		24		 北京
 heima003	王五		25		 广州
 heima004	赵六	 	26		 深圳
 ```
-
+![Github stars](https://img.shields.io/github/stars/lujih/StudentManagementSystem.svg)
