@@ -44,12 +44,15 @@ public class ManagementSystem {
                     continue;
                     //查询学生
                 case 4:
+                    System.out.println("查询学生");
                     showinf(als);
                     continue;
                     //退出
                 case 5:
                     System.out.println("你已退出黑马学生管理系统");
                     return;
+                default:
+                    System.out.println("无效选项");
             }
         }
     }
@@ -80,6 +83,7 @@ public class ManagementSystem {
         s.setAge(sc.nextInt());
         System.out.println("输入学生家庭住址:");
         s.setHome(sc.next());
+        System.out.println("学生信息添加成功.");
         return s;
     }
 
@@ -96,9 +100,7 @@ public class ManagementSystem {
         String delid = sc.next();
         int t = -1;
         for (int i = 0; i < als.size(); i++) {
-            if (!delid.equals(als.get(i).getId())) {
-
-            } else {
+            if (delid.equals(als.get(i).getId())) {
                 t = i;
             }
         }
@@ -131,40 +133,15 @@ public class ManagementSystem {
         }
         if (t == -1) {
             System.out.println("当前id不存在，反回到初始菜单.");
-        } else {
-            while (true) {
-                System.out.println("-------------修改学生信息菜单----------------");
-                System.out.println("1：修改学生id");
-                System.out.println("2：修改学生姓名");
-                System.out.println("3：修改学生年龄");
-                System.out.println("4：修改学生家庭住址");
-                System.out.println("5：返回主菜单");
-                System.out.println("请输入您的选择:");
-                int options = sc.nextInt();
-                switch (options) {
-                    //添加学生
-                    case 1:
-                        System.out.println("还没写");
-                        continue;
-                        //删除学生
-                    case 2:
-                        System.out.println("还没写");
-                        continue;
-                        //修改学生
-                    case 3:
-                        System.out.println("还没写");
-                        continue;
-                        //查询学生
-                    case 4:
-                        System.out.println("还没写");
-                        continue;
-                        //退出
-                    case 5:
-                        System.out.println("你将返回主菜单");
-                        return;
-                }
-            }
+            return;
         }
+        System.out.println("请输入要修改的学生姓名:");
+        als.get(t).setName(sc.next());
+        System.out.println("请输入要修改的学生年龄:");
+        als.get(t).setAge(sc.nextInt());
+        System.out.println("请输入要修改的学生家庭住址:");
+        als.get(t).setHome(sc.next());
+        System.out.println("id为" + modid + "的学生信息修改完成.");
     }
 
 
